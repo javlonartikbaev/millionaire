@@ -7,5 +7,5 @@ from Todos import views
 
 
 urlpatterns = [
-    path('api/', views.QuestionViewSet.as_view()),
+    path('api/<int:level_id>', views.QuestionViewSet.as_view()),
 ]

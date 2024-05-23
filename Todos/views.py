@@ -12,8 +12,8 @@ from Todos.serializers import *
 
 
 class QuestionViewSet(APIView):
-    def get(self, request):
-        questions = Question.objects.all()
+    def get(self, request, level_id):
+        questions = Question.objects.filter(level=level_id)
         questions_serializers = QuestionSerializer(questions, many=True).data
 
         data = {'questions': questions_serializers}
